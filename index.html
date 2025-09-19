@@ -1,64 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brickly - Real Estate for Gen Z</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-<style>
-  body { font-family: Arial, sans-serif; margin:0; padding:0; text-align:center; background:#f4f4f9; }
-  header { background: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1600&q=80') center/cover; color:white; padding:80px 20px; }
-  header h1 { font-size:3rem; margin-bottom:10px; }
-  header p { font-size:1.2rem; }
-  .button { background:#ff6b6b; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; }
-  section { padding:50px 20px; }
-  .card { background:white; border-radius:12px; padding:20px; margin:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); display:inline-block; width:260px; vertical-align:top; }
-  .card img { width:100%; border-radius:8px; }
-  footer { background:#222; color:white; padding:20px; margin-top:20px; }
-  ul { list-style:none; padding:0; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brickly – Own a Slice of Your City</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #222; }
+
+    /* Navbar */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; position: absolute; width: 100%; z-index: 10; }
+    nav a { margin: 0 1rem; text-decoration: none; color: white; font-weight: 500; }
+    nav .logo { font-size: 1.5rem; font-weight: 700; color: white; }
+    nav .cta { border: 1px solid white; padding: 0.5rem 1rem; border-radius: 4px; }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      background: url("https://images.unsplash.com/photo-1501594907352-04cda38ebc29") center/cover no-repeat;
+      display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 4rem; color: white;
+    }
+    .hero h1 { font-size: 3rem; max-width: 600px; }
+    .hero p { margin: 1rem 0; font-size: 1.2rem; max-width: 600px; }
+    .hero button {
+      background: #00c389; border: none; padding: 0.8rem 1.5rem; font-size: 1rem; border-radius: 4px; cursor: pointer; color: white;
+    }
+
+    /* Properties Section */
+    .properties { padding: 4rem; background: #f9f9f9; }
+    .properties h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; }
+    .property-card {
+      display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem;
+      background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .property-card img { width: 50%; border-radius: 8px; }
+    .property-info { flex: 1; }
+    .property-info h3 { margin-bottom: 1rem; }
+    .property-info a { color: #00c389; text-decoration: none; font-weight: 600; }
+
+    /* FAQ */
+    .faq { padding: 4rem; }
+    .faq h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; }
+    .faq-item { border-bottom: 1px solid #ddd; padding: 1rem 0; cursor: pointer; }
+    .faq-item h4 { font-size: 1.1rem; }
+    .faq-item p { display: none; margin-top: 0.5rem; color: #555; }
+    .faq-item.active p { display: block; }
+
+    /* Footer */
+    footer { background: #111; color: white; padding: 2rem 4rem; display: flex; justify-content: space-between; flex-wrap: wrap; }
+    footer div { margin-bottom: 1rem; }
+    footer a { color: #aaa; text-decoration: none; display: block; margin: 0.3rem 0; }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Brickly</h1>
-  <p>Own a slice of your city. Start from ₹5,000.</p>
-  <a class="button" href="#how">Get Started</a>
-</header>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Brickly</div>
+    <div>
+      <a href="#">Properties</a>
+      <a href="#">Why Brickly</a>
+      <a href="#">Resources</a>
+      <a href="#" class="cta">Sign Up</a>
+    </div>
+  </nav>
 
-<section id="how">
-  <h2>How it Works</h2>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=800&q=80" alt="Property">
-    <h3>Pick a Property</h3>
-    <p>Co-living, student housing, or vacation rentals curated for Gen Z investors.</p>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80" alt="Invest">
-    <h3>Invest Fractionally</h3>
-    <p>Start with as little as ₹5,000 and own your share digitally.</p>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1581579180916-6f25ad7e5ff6?auto=format&fit=crop&w=800&q=80" alt="Dashboard">
-    <h3>Track & Earn</h3>
-    <p>See your monthly yield, progress badges, and social leaderboard updates.</p>
-  </div>
-</section>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>A new way to invest in commercial real estate</h1>
+    <p>Start with as little as ₹5,000 and own a slice of your city. Transparent, compliant, and accessible to everyone.</p>
+    <button>View Opportunities →</button>
+  </section>
 
-<section>
-  <h2>Why Brickly?</h2>
-  <ul>
-    <li>🎮 Gamified investing experience</li>
-    <li>💸 Start small, grow your portfolio</li>
-    <li>📱 Mobile-first, instant dashboard</li>
-    <li>🌱 Lifestyle properties that matter to you</li>
-    <li>🌐 Share your ownership with friends</li>
-  </ul>
-</section>
+  <!-- Properties -->
+  <section class="properties">
+    <h2>Featured Properties</h2>
 
-<footer>
-  <p>© 2025 Brickly | Fractional real estate for Gen Z</p>
-</footer>
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1590490359854-dfba19688d3a" alt="Office Space">
+      <div class="property-info">
+        <h3>Brickly Tower – Bengaluru</h3>
+        <p>Premium office space in the heart of Bengaluru’s IT corridor.</p>
+        <a href="#">View Details →</a>
+      </div>
+    </div>
+
+    <div class="property-card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Commercial Building">
+      <div class="property-info">
+        <h3>Brickly Square – Mumbai</h3>
+        <p>Grade A retail and office space with high rental yields.</p>
+        <a href="#">View Details →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>FAQs</h2>
+    <div class="faq-item">
+      <h4>What is fractional ownership?</h4>
+      <p>Fractional ownership allows you to co-invest in premium commercial properties with small ticket sizes.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How much do I need to start?</h4>
+      <p>You can start investing with as little as ₹5,000.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Is it regulated?</h4>
+      <p>All investments are fully compliant with SEBI regulations and provide transparent reporting.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h4>Brickly</h4>
+      <p>Own a slice of your city.</p>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Careers</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
